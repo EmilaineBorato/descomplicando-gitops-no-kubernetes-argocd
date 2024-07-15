@@ -8,17 +8,19 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: https://github.com/bernardolsp/descomplicando-gitops-no-kubernetes-argocd.git
+      repoURL:  https://github.com/EmilaineBorato/descomplicando-gitops-no-kubernetes-argocd.git
       revision: feat/day3
       directories:
       - path: applicationset/apps/*/helm
+      - path: applicationset/apps/prometheus/helm
+      - exclude: true
   template:
     metadata:
       name: '{{index .path.segments 2}}'
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/bernardolsp/descomplicando-gitops-no-kubernetes-argocd.git
+        repoURL: https://github.com/EmilaineBorato/descomplicando-gitops-no-kubernetes-argocd.git
         targetRevision: feat/day3
         path: '{{.path.path}}'
       destination:
