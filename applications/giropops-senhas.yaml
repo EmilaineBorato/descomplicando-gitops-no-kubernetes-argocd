@@ -14,6 +14,7 @@ spec:
     namespace: giropops-senhas
     server: 'https://kubernetes.default.svc'
   syncPolicy:
+  ## Respeita o repositorio true -> sim, false -> nao, ou seja se for diferente do repositorio ele nao deixa
     automated:
       selfHeal: true
     syncOptions:
