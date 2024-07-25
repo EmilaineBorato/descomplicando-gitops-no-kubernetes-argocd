@@ -17,7 +17,9 @@ spec:
           - git: 
               repoURL: https://github.com/EmilaineBorato/descomplicando-gitops-no-kubernetes-argocd.git
               revision: feat/day3
+              ## como o name é igual,precisa de um prefixo
               pathParamPrefix: cfg
+              ## Está pegando de um arquivo json localizado no github
               files:
                 - path: applicationset/configs/dev.json
   template:
@@ -28,6 +30,7 @@ spec:
       source:
         repoURL: https://github.com/EmilaineBorato/descomplicando-gitops-no-kubernetes-argocd.git
         targetRevision: feat/day3
+        ## Nome da aplication, referente ao diretorio ./generetor up
         path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc

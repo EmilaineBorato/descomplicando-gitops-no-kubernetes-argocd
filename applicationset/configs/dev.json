@@ -1,6 +1,6 @@
 {
   "cluster": {
-    "nome": "test-local",
+    "nome": "dev",
     "id": "123"
   },
   "owner": "platform"

@@ -9,7 +9,7 @@ spec:
   generators:
   - pullRequest:
       github: 
-        owner: bernardolsp
+        owner: emilaineborato
         repo: descomplicando-gitops-no-kubernetes-argocd
         tokenRef:
           secretName: github-token
@@ -21,7 +21,7 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/bernardolsp/descomplicando-gitops-no-kubernetes-argocd.git
+        repoURL: https://github.com/EmilaineBorato/descomplicando-gitops-no-kubernetes-argocd.git
         targetRevision: '{{head_sha}}'
         path: app-of-apps/
       destination:
